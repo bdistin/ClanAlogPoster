@@ -18,44 +18,44 @@ const ClanMember = require('./ClanMember');
 class Client {
 
 	/**
-     * @param {Object} config The configuration for this Client
-     * @property {string} config.webhookID The id of the webhook to post to
-     * @property {string} config.webhookToken The token for posting to the webhook
-     * @property {string} config.clan The name of the clan to post activities from
-     * @property {number} config.errorLimit The number of errors before the client starts skipping checking them
-     */
+	 * @param {Object} config The configuration for this Client
+	 * @property {string} config.webhookID The id of the webhook to post to
+	 * @property {string} config.webhookToken The token for posting to the webhook
+	 * @property {string} config.clan The name of the clan to post activities from
+	 * @property {number} config.errorLimit The number of errors before the client starts skipping checking them
+	 */
 	constructor(config) {
 		/**
-         * The webhook connection to post to
-         * @type {external:WebhookClient}
-         */
+		 * The webhook connection to post to
+		 * @type {external:WebhookClient}
+		 */
 		this.webhook = new Discord.WebhookClient(config.webhookID, config.webhookToken);
 
 		/**
-         * The name of the clan to post activities from
-         * @type {string}
-         */
+		 * The name of the clan to post activities from
+		 * @type {string}
+		 */
 		this.clanName = config.clan;
 
 		/**
-         * The ClanMember cache
-         * @type {Map<string, ClanMember>}
-         */
+		 * The ClanMember cache
+		 * @type {Map<string, ClanMember>}
+		 */
 		this.clanMembers = new Map();
 
 		/**
-         * The number of errors before the client starts skipping checking them
-         * @type {number}
-         */
+		 * The number of errors before the client starts skipping checking them
+		 * @type {number}
+		 */
 		this.errorLimit = config.errorLimit;
 
 		this.webhook.send('I am now alive!');
 	}
 
 	/**
-     * Starts this client checking for activities
-     * @returns {Promise<void>}
-     */
+	 * Starts this client checking for activities
+	 * @returns {Promise<void>}
+	 */
 	async start() {
 		try {
 			const members = await fs.readJSON('./clanmembers.json');
@@ -67,36 +67,36 @@ class Client {
 	}
 
 	/**
-     * Creates and caches a new ClanMember to track activities
-     * @param {string} name The name of the clan member
-     * @param {string} [lastEvent] The last event recorded from them
-     * @returns {void}
-     */
+	 * Creates and caches a new ClanMember to track activities
+	 * @param {string} name The name of the clan member
+	 * @param {string} [lastEvent] The last event recorded from them
+	 * @returns {void}
+	 */
 	createMember(name, lastEvent) {
 		this.clanMembers.set(name, new ClanMember(this, name, lastEvent));
 	}
 
 	/**
-     * Saves the current cache to file, so activites are not posted multiple times
-     * @returns {Promise<void>}
-     */
+	 * Saves the current cache to file, so activites are not posted multiple times
+	 * @returns {Promise<void>}
+	 */
 	async save() {
 		await fs.writeJSONAtomic('./clanmembers.json', [...this.clanMembers.values()]);
 	}
 
 	/**
-     * Sleeps an amount of time between api requests
-     * @returns {Promise<void>}
-     */
+	 * Sleeps an amount of time between api requests
+	 * @returns {Promise<void>}
+	 */
 	async sleep() {
 		// sleep 5 seconds plus a random fraction of a second
 		await sleep(5000 + (Math.random() * 1000));
 	}
 
 	/**
-     * The Activity checking loop
-     * @returns {Promise<void>}
-     */
+	 * The Activity checking loop
+	 * @returns {Promise<void>}
+	 */
 	async loop() {
 		console.log('getting members');
 		await this.getMemberList();
@@ -106,9 +106,9 @@ class Client {
 	}
 
 	/**
-     * Gets the clan member list from the api and updates the local cache
-     * @returns {Promise<void>}
-     */
+	 * Gets the clan member list from the api and updates the local cache
+	 * @returns {Promise<void>}
+	 */
 	async getMemberList() {
 		try {
 			const membersString = await fetch(`http://services.runescape.com/m=clan-hiscores/members_lite.ws?clanName=${encodeURIComponent(this.clanName)}`).then(res => res.text());
@@ -132,9 +132,9 @@ class Client {
 	}
 
 	/**
-     * Loops through the members and gets their activities
-     * @returns {Promise<void>}
-     */
+	 * Loops through the members and gets their activities
+	 * @returns {Promise<void>}
+	 */
 	async loopMembers() {
 		for (const member of this.clanMembers.values()) {
 			if (!member.active) continue;
