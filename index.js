@@ -52,8 +52,6 @@ class Main {
         await this.getMemberList();
         console.log('looping members');
         await this.loopMembers();
-        console.log('saving members');
-        await this.save();
         return this.loop();
     }
 
