@@ -60,8 +60,15 @@ class Main {
             const membersString = await fetch(`http://services.runescape.com/m=clan-hiscores/members_lite.ws?clanName=${encodeURIComponent(config.clan)}`).then(res => res.text());
             const members = membersString.split('\n').map(memberString => memberString.split(',')[0].replace(' ', '_')).slice(1);
 
+            // Removes any members that may not be in the clan any longer
+            const membersClone = new Map(this.clanMembers);
+            this.clanMembers.clear();
+
             for (const member of members) {
-                if (!this.clanMembers.has(member)) this.createMember(member);
+                const existing = membersClone.get(member);
+
+                if (existing) this.clanMembers.set(existing.name, existing);
+                else this.createMember(member);
             }
         } catch (error) {
             console.error(error);
