@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "8"
+install: yarn
+jobs:
+  include:
+    - stage: test
+      script: yarn test
+cache:
+  yarn: true
+  directories:
+    - node_modules
