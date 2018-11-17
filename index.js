@@ -58,7 +58,7 @@ class Main {
     async getMemberList() {
         try {
             const membersString = await fetch(`http://services.runescape.com/m=clan-hiscores/members_lite.ws?clanName=${encodeURIComponent(config.clan)}`).then(res => res.text());
-            const members = membersString.split('\n').map(memberString => memberString.split(',')[0]).slice(1);
+            const members = membersString.split('\n').map(memberString => memberString.split(',')[0].replace(' ', '_')).slice(1);
 
             for (const member of members) {
                 if (!this.clanMembers.has(member)) this.createMember(member);
@@ -85,7 +85,7 @@ class Main {
 class ClanMember {
 
     constructor(name, lastEvent) {
-        this.name = name.replace(' ', '_');
+        this.name = name;
         this.lastEvent = lastEvent || null;
         this.errorsFetching = 0;
         // coerce to a date
