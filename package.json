@@ -1,0 +1,24 @@
+{
+  "name": "clanalogposter",
+  "version": "1.0.0",
+  "description": "Posts clan achievements to a webhook",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bdistin/ClanAlogPoster.git"
+  },
+  "author": "bdistin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bdistin/ClanAlogPoster/issues"
+  },
+  "homepage": "https://github.com/bdistin/ClanAlogPoster#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "fs-nextra": "^0.3.7",
+    "node-fetch": "^2.3.0"
+  }
+}
