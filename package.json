@@ -20,5 +20,9 @@
     "discord.js": "^11.4.2",
     "fs-nextra": "^0.3.7",
     "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-klasa": "github:dirigeants/klasa-lint"
   }
 }
