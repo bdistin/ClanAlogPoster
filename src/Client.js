@@ -112,7 +112,7 @@ class Client {
 	async getMemberList() {
 		try {
 			const membersString = await fetch(`http://services.runescape.com/m=clan-hiscores/members_lite.ws?clanName=${encodeURIComponent(this.clanName)}`).then(res => res.text());
-			const members = membersString.split('\n').map(memberString => memberString.split(',')[0].replace(/\s/g, '_')).slice(1);
+			const members = membersString.split('\n').map(memberString => memberString.split(',')[0].replace(/�/g, '_')).slice(1);
 
 			// Removes any members that may not be in the clan any longer
 			const membersClone = new Map(this.clanMembers);
