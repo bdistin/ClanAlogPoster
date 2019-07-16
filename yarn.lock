@@ -162,8 +162,8 @@ escape-string-regexp@^1.0.5:
 
 "eslint-config-klasa@github:dirigeants/klasa-lint":
   version "0.0.1"
-  uid b3c519e0cb0a9c93a5d629f4b60bcd2a901c0538
-  resolved "https://codeload.github.com/dirigeants/klasa-lint/tar.gz/b3c519e0cb0a9c93a5d629f4b60bcd2a901c0538"
+  uid "65ad456e8b1b2ba433460686967d1041b56858ff"
+  resolved "https://codeload.github.com/dirigeants/klasa-lint/tar.gz/65ad456e8b1b2ba433460686967d1041b56858ff"
 
 eslint-scope@^4.0.3:
   version "4.0.3"
@@ -436,11 +436,11 @@ minimatch@^3.0.4:
 
 minimist@0.0.8:
   version "0.0.8"
-  resolved "http://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
+  resolved "https://registry.npmjs.org/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
 mkdirp@^0.5.1:
   version "0.5.1"
-  resolved "http://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
+  resolved "https://registry.npmjs.org/mkdirp/-/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
 
@@ -489,7 +489,7 @@ optionator@^0.8.2:
 
 os-tmpdir@~1.0.2:
   version "1.0.2"
-  resolved "http://registry.npmjs.org/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
+  resolved "https://registry.npmjs.org/os-tmpdir/-/os-tmpdir-1.0.2.tgz#bbe67406c79aa85c5cfec766fe5734555dfa1274"
 
 parent-module@^1.0.0:
   version "1.0.0"
@@ -499,7 +499,7 @@ parent-module@^1.0.0:
 
 path-is-absolute@^1.0.0:
   version "1.0.1"
-  resolved "http://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
+  resolved "https://registry.npmjs.org/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
 
 path-is-inside@^1.0.2:
   version "1.0.2"
@@ -652,7 +652,7 @@ text-table@^0.2.0:
 
 through@^2.3.6:
   version "2.3.8"
-  resolved "http://registry.npmjs.org/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
+  resolved "https://registry.npmjs.org/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
 tmp@^0.0.33:
   version "0.0.33"
@@ -702,7 +702,7 @@ write@1.0.3:
 
 ws@^4.0.0:
   version "4.1.0"
-  resolved "http://registry.npmjs.org/ws/-/ws-4.1.0.tgz#a979b5d7d4da68bf54efe0408967c324869a7289"
+  resolved "https://registry.npmjs.org/ws/-/ws-4.1.0.tgz#a979b5d7d4da68bf54efe0408967c324869a7289"
   dependencies:
     async-limiter "~1.0.0"
     safe-buffer "~5.1.0"
