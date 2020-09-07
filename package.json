@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/bdistin/ClanAlogPoster#readme",
   "dependencies": {
-    "discord.js": "^11.4.2",
+    "discord.js": "^12.3.1",
     "fs-nextra": "^0.4.7",
     "node-fetch": "^2.6.1"
   },
